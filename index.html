@@ -3,6 +3,8 @@
 </head>
 <body>
 <h1 >Auth Test</h1>
+<p id="demo">NOTHING</p>
+
   <script>
     console.log('inside script');
 	var req = new XMLHttpRequest();
@@ -21,6 +23,8 @@
 		// Begin accessing JSON data here
 		console.log('readystatechange');
 		console.log(this.responseText);
+		document.getElementById("demo").innerHTML = this.responseText;
+
 	}
   </script>
 </body>
