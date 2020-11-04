@@ -5,6 +5,23 @@
 <h1 >Auth Test</h1>
   <script>
     console.log('inside script');
+	var req = new XMLHttpRequest();
+	var theMethod = "GET";
+	var theUrl = "http://dummy.restapiexample.com/api/v1/employees";
+	
+	console.log('theMethod: '+theMethod);
+	console.log('theUrl: '+theUrl);
+
+	req.open(theMethod, theUrl, true);
+	req.setRequestHeader('Content-type', 'application/json');
+
+	req.send();
+	
+	req.onreadystatechange = function () {
+		// Begin accessing JSON data here
+		console.log('readystatechange');
+		console.log(this.responseText);
+	}
   </script>
 </body>
 </html>
